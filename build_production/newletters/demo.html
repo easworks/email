@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="utf-8">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings xmlns:o="urn:schemas-microsoft-com:office:office">
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <style>
+    td,th,div,p,a,h1,h2,h3,h4,h5,h6 {font-family: "Segoe UI", sans-serif; mso-line-height-rule: exactly;}
+  </style>
+  <![endif]-->
+  <title>Edition #1: Using Markdown to create HTML emails with Maizzle</title>
+  <style>
+    h1 {
+      font-size: 30px;
+      line-height: 36px;
+      color: #0f172a;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px !important;
+        line-height: 32px !important;
+      }
+    }
+    h2 {
+      font-size: 24px;
+      line-height: 32px;
+      color: #0f172a;
+    }
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 20px !important;
+        line-height: 28px !important;
+      }
+    }
+    h3 {
+      font-size: 20px;
+      line-height: 28px;
+      color: #0f172a;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 600px) {
+      h3 {
+        font-size: 18px !important;
+        line-height: 24px !important;
+      }
+    }
+    h4 {
+      font-size: 18px;
+      line-height: 24px;
+      color: #0f172a;
+    }
+    @media (max-width: 600px) {
+      h4 {
+        font-size: 16px !important;
+        line-height: 20px !important;
+      }
+    }
+    h5 {
+      font-size: 16px;
+      line-height: 20px;
+      color: #0f172a;
+    }
+    @media (max-width: 600px) {
+      h5 {
+        font-size: 14px !important;
+      }
+    }
+    h6 {
+      font-size: 16px;
+      text-transform: uppercase;
+      line-height: 20px;
+      color: #0f172a;
+    }
+    @media (max-width: 600px) {
+      h6 {
+        font-size: 14px !important;
+      }
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+    ul,
+    ol {
+      line-height: 24px;
+      color: #475569;
+    }
+    blockquote p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 28px;
+    }
+    blockquote {
+      border-left: 4px solid #6366f1;
+      margin: 0;
+      margin-bottom: 32px;
+      padding-left: 16px;
+    }
+    hr {
+      height: 1px;
+      border-width: 0px;
+      background-color: #cbd5e1;
+      color: #cbd5e1;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+    img {
+      max-width: 100%;
+      vertical-align: middle;
+      line-height: 100%;
+      border: 0;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+    pre {
+      margin-bottom: 24px;
+      overflow: auto;
+      white-space: pre;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: left;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 16px;
+      color: #cbd5e1;
+      hyphens: none;
+      tab-size: 2;
+      word-break: normal;
+      word-spacing: normal;
+      word-wrap: normal;
+    }
+    :not(pre) > code {
+      border-radius: 4px;
+      padding-left: 6px;
+      padding-right: 6px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      white-space: normal;
+      font-size: 14px;
+      border-width: 1px;
+      border-color: #e2e8f0;
+      background-color: #f8fafc;
+      color: #ec4899;
+      border-style: solid;
+    }
+    .m-0 {
+      margin: 0;
+    }
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .mb-10 {
+      margin-bottom: 40px;
+    }
+    .block {
+      display: block;
+    }
+    .inline-block {
+      display: inline-block;
+    }
+    .w-600px {
+      width: 600px;
+    }
+    .w-full {
+      width: 100%;
+    }
+    .max-w-full {
+      max-width: 100%;
+    }
+    .rounded {
+      border-radius: 4px;
+    }
+    .rounded-xl {
+      border-radius: 12px;
+    }
+    .bg-emerald-300 {
+      background-color: #6ee7b7;
+    }
+    .bg-indigo-600 {
+      background-color: #4f46e5;
+    }
+    .bg-slate-100 {
+      background-color: #f1f5f9;
+    }
+    .bg-white {
+      background-color: #fff;
+    }
+    .p-0 {
+      padding: 0;
+    }
+    .p-8 {
+      padding: 32px;
+    }
+    .px-8 {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .py-4 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .font-sans {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    .text-base {
+      font-size: 16px;
+    }
+    .text-sm {
+      font-size: 14px;
+    }
+    .font-semibold {
+      font-weight: 600;
+    }
+    .leading-6 {
+      line-height: 24px;
+    }
+    .leading-none {
+      line-height: 1;
+    }
+    .text-slate-50 {
+      color: #f8fafc;
+    }
+    .mso-font-width--100pc {
+      mso-font-width: -100%;
+    }
+    .-webkit-font-smoothing-antialiased {
+      -webkit-font-smoothing: antialiased;
+    }
+    .text-decoration-none {
+      text-decoration: none;
+    }
+    .word-break-break-word {
+      word-break: break-word;
+    }
+    .hover-bg-indigo-700:hover {
+      background-color: #4338ca !important;
+    }
+    @media (max-width: 600px) {
+      .sm-px-4 {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+    }
+  </style>
+</head>
+<body class="m-0 p-0 w-full word-break-break-word -webkit-font-smoothing-antialiased bg-slate-100">
+  <div align="center" role="article" aria-roledescription="email" lang="en" class="bg-emerald-300" aria-label="Edition #1: Using Markdown to create HTML emails with Maizzle">
+    <table class="font-sans" cellpadding="0" cellspacing="0" role="none">
+      <tr>
+        <td class="w-600px max-w-full">
+          <table class="w-full" cellpadding="0" cellspacing="0" role="none">
+            <tr>
+              <td class="text-center">
+                <img src="https://development.branches.easworks.com/assets/brand/symbol-purple.png" width="64" class="block mx-auto p-8" alt="">
+              </td>
+            </tr>
+            <tr>
+              <td class="px-8 sm-px-4 text-base leading-6 bg-white rounded-xl">
+                <h1 class="m-0 mb-10">Edition #1: Using Markdown to create HTML emails with Maizzle</h1>
+                <p><img src="images/feature.jpg" alt="Spaceman on planet surface" width="536"></p>
+                <p>This is a <img src="images/insignia.png" alt="Maizzle " width="20">arkdown starter project that will help you get started with creating newsletter email templates from Markdown files in Maizzle.</p>
+                <p>It supports all the framework features you already know and love:</p>
+                <ul>
+                  <li>Tailwind CSS</li>
+                  <li>components</li>
+                  <li>expressions</li>
+                  <li>conditionals, loops etc.</li>
+                </ul>
+                <h2>Ordered lists</h2>
+                <ol>
+                  <li><em>Italics</em></li>
+                  <li><strong>Bold text</strong></li>
+                  <li><a href="https://maizzle.com">Links</a></li>
+                </ol>
+                <hr>
+                <h2>Components</h2>
+                <p>You can import Maizzle components right into your Markdown files. For example, the following button is a component:</p>
+                <div>
+                  <!--[if mso]>
+  <v:roundrect arcsize="10%" style="height: 44px; mso-wrap-style: none;" stroke="f" fillcolor="#4f46e5">
+  <![endif]-->
+                  <a href="https://maizzle.com/guides/markdown-emails" class="inline-block py-4 px-8 text-sm leading-none font-semibold rounded text-slate-50 bg-indigo-600 hover-bg-indigo-700 text-decoration-none">
+                    <!--[if mso]>
+      <i class="mso-font-width--100pc" style="letter-spacing: 32px; mso-text-raise: 30px" hidden>&nbsp;</i>
+    <![endif]-->
+                    <span style="mso-text-raise: 16px">
+  Read the guide &rarr;
+</span>
+                    <!--[if mso]>
+      <i class="mso-font-width--100pc" style="letter-spacing: 32px" hidden>&nbsp;</i>
+    <![endif]-->
+                  </a>
+                  <!--[if mso]>
+    </v:roundrect>
+  <![endif]-->
+                </div>
+                <hr>
+                <h2>Styling</h2>
+                <p>The starter includes CSS styles for common elements like paragraphs, headings, links, images, lists, <code>inline code</code>, or blockquotes:</p>
+                <blockquote>
+                  <p>One small step for man, one giant leap for mankind.</p>
+                </blockquote>
+                <p>It even supports code blocks:</p>
+                <pre style="background-color: #292D3E" tabindex="0"><code><span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">p</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">class</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">text-lg</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
+<span><span style="color: #BABED8">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https://maizzle.com</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #BABED8">Maizzle</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span><span style="color: #BABED8"> is a framework for building responsive HTML emails with Tailwind CSS.</span></span>
+<span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">p</span><span style="color: #89DDFF">&gt;</span></span>
+<span></span></code></pre>
+                <p>Cheers,<br>
+                  The Maizzle Team</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
